@@ -1,0 +1,108 @@
+/* src/components/RegistrationForm.css */
+.registration-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background: url('./images/bg.jpg') no-repeat center center fixed;
+	background-size: cover;
+	padding: 10px;
+}
+
+.registration-form {
+	width: 40%;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background-color: rgba(255, 255, 255, 0.5);
+	/* Set the alpha channel to make it more transparent */
+}
+
+h2 {
+	text-align: center;
+	color: #333;
+}
+
+form {
+	display: grid;
+	gap: 16px;
+}
+
+.label-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.input-group {
+	width: 100%;
+}
+
+input,
+button,
+select {
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.radio-group {
+	display: flex;
+	gap: 16px;
+}
+
+.button-container {
+	margin-top: 16px;
+}
+
+button {
+	background-color: #ff6b6b;
+	color: #fff;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button:hover {
+	background-color: #ff4d4d;
+}
+
+.image-container {
+	width: 40%;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.navbar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	display: flex;
+	justify-content: center;
+}
+
+.navbar li {
+	float: left;
+}
+
+.navbar li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.navbar li a:hover {
+	background-color: #ddd;
+	color: black;
+}
+h1{
+	font-size: 45px;
+}
