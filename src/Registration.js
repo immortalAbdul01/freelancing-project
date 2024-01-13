@@ -1,8 +1,10 @@
 // src/components/RegistrationForm.js
 import React, { useState } from 'react';
 import './Registration.css'; // Import the CSS file
-
-
+import { collection ,addDoc } from 'firebase/firestore';
+import { db } from './firebase-config';
+import UserList from './UserList';
+import Alert from 'react'
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     patientName: '',
@@ -16,6 +18,9 @@ const RegistrationForm = () => {
     dateOfTreatment: new Date(),
   });
 
+	const userCollectionRef = collection(db
+	,"users")
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -24,19 +29,25 @@ const RegistrationForm = () => {
     });
   };
 
-  const handleDateChange = (date) => {
+   const handleDateChange = (date) => {
     setFormData({
       ...formData,
       dateOfTreatment: date,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add logic to handle form submission (e.g., API call to store patient information)
-  };
+    Alert('Form submitted:');
 
+    try {
+      // Add the form data to the "users" collection in Firestore
+      const docRef = await addDoc(userCollectionRef, formData);
+      console.log('Document written with ID: ', docRef.id);
+    } catch (error) {
+      console.error('Error adding document: ', error.message);
+    }
+  };
   return (
 	  <div className="registration-container">
 		 <nav>
@@ -134,7 +145,8 @@ const RegistrationForm = () => {
 
           <button type="submit">Submit</button>
         </form>
-      </div>
+		  </div>
+		  <UserList/>
     </div>
   );
 };

@@ -1,0 +1,57 @@
+/* src/components/UserList.css */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	background-color: white;
+}
+
+thead {
+	background-color: #f2f2f2;
+}
+
+th,
+td {
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+th {
+	background-color: #4CAF50;
+	color: white;
+}
+
+tr:hover {
+	background-color: #f5f5f5;
+}
+
+/* Add some spacing for better readability */
+body {
+	font-family: 'Arial', sans-serif;
+	padding: 20px;
+	background-color: #f9f9f9;
+}
+
+h2 {
+	color: #333;
+}
+
+
+
+/* Add borders and style for Edit button */
+td {
+	border: 1px solid #ddd;
+}
+
+button {
+	background-color: skyblue;
+	color: white;
+	padding: 8px;
+	border: none;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #2196F3;
+}
