@@ -38,7 +38,7 @@ const RegistrationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    Alert('Form submitted:');
+    // Alert('Form submitted:');
 
     try {
       // Add the form data to the "users" collection in Firestore

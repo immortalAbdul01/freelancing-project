@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
 // import getFireStore from 'firebase/firestore'
 
 // dotenv.config()
@@ -11,12 +12,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCdv6IGLrZnjiDqCPYakwf8zEmOsoElyWk",
-  authDomain: "dentist-91d63.firebaseapp.com",
-  projectId: "dentist-91d63",
-  storageBucket: "dentist-91d63.appspot.com",
-  messagingSenderId: "70361973851",
-  appId: "1:70361973851:web:bd508fb743dcba877eab7e"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTHD,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_SB,
+  messagingSenderId:process.env.REACT_APP_MSI,
+  appId: process.env.REACT_APP_APPID
 };
 
 // Initialize Firebase
