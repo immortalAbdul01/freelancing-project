@@ -61,7 +61,7 @@ const UserList = () => {
   };
 
   return (
-    <div>
+    <div id='patients'>
       <h2>User List</h2>
       <table>
         <thead>

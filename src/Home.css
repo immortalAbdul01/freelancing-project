@@ -1,0 +1,23 @@
+/* src/components/ImageGallery.css */
+
+.image-gallery-container {
+	width: 75%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+h1 {
+	color: #333;
+}
+
+.image-wrapper {
+	display: flex;
+}
+
+.gallery-image {
+	width: 50%;
+	/* Each image takes 50% of the width */
+	height: auto;
+	margin: 10px;
+	/* Add some margin between images */
+}

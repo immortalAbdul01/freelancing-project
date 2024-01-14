@@ -84,6 +84,7 @@ img {
 	overflow: hidden;
 	background-color: #333;
 	display: flex;
+	position: fixed;
 	justify-content: center;
 }
 

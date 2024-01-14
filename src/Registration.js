@@ -5,7 +5,9 @@ import { collection ,addDoc } from 'firebase/firestore';
 import { db } from './firebase-config';
 import UserList from './UserList';
 import Alert from 'react'
+import Home from './Home';
 const RegistrationForm = () => {
+	const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     patientName: '',
     gender: 'male',
@@ -38,27 +40,45 @@ const RegistrationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Alert('Form submitted:');
 
     try {
       // Add the form data to the "users" collection in Firestore
       const docRef = await addDoc(userCollectionRef, formData);
       console.log('Document written with ID: ', docRef.id);
+
+      // Update the local state with the new data
+      setFormSubmitted(true);
+      setFormData({
+        patientName: '',
+        gender: 'male',
+        age: '',
+        contactNo: '',
+        address: '',
+        treatment: '',
+        medicalHistory: '',
+        sitUp: '',
+        dateOfTreatment: new Date(),
+      });
     } catch (error) {
       console.error('Error adding document: ', error.message);
     }
   };
+
   return (
 	  <div className="registration-container">
 		 <nav>
         <ul className="navbar">
           <li><a href="#home">Home</a></li>
-          <li><a href="#register">Register</a></li>
+          <li><a href="#form">Register</a></li>
+          <li><a href="#patients">Patients</a></li>
         </ul>
 		  </nav>
-		  <h1
+		  <h1 id='home'
 		  >Vijay Orthodontic clinic</h1>
-      <div className="registration-form">
+		  <Home  />
+		  <h1> Register a Patient here </h1>
+
+      <div className="registration-form" id='form'>
         <h1 style={{ opacity: 0 }}>My Dentist App</h1>
         <h2>Patient Registration</h2>
         <form onSubmit={handleSubmit}>
