@@ -1,4 +1,4 @@
-// src/components/RegistrationForm.js
+
 import React, { useState } from 'react';
 import './Registration.css'; // Import the CSS file
 import { collection ,addDoc } from 'firebase/firestore';
